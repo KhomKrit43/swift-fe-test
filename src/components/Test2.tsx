@@ -95,7 +95,7 @@ const Test2 = () => {
     } catch (error) {
       console.error(error);
     } finally {
-      // setMode("add");
+      setMode("add");
     }
   };
 
