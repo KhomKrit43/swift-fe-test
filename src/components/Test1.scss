@@ -1,0 +1,143 @@
+// src/assets/scss/_variables.scss:
+@import '/src/assets/scss/variables';
+@import '/src/assets/scss/mixins';
+
+.ButtonGroup {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  height: $btn-height;
+}
+
+.BTN {
+  background: $btn-background;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  border-radius: $border-radius;
+  transition: background 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background: $btn-hover-background;
+  }
+}
+
+.Center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+
+  .BTN {
+    height: 48%;
+  }
+}
+
+.TextArrow {
+  position: absolute;
+  bottom: -0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .ant-space {
+    background: $text-background;
+    color: $text-color;
+    padding: $text-padding;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+  }
+}
+
+.ButtonUp .Arrow {
+  @include arrow(up);
+}
+
+.ButtonDown .Arrow {
+  @include arrow(down);
+}
+
+.ButtonLeft .Arrow {
+  @include arrow(left);
+}
+
+.ButtonRight .Arrow {
+  @include arrow(right);
+}
+
+.ShapeGroup {
+  margin-top: 20px;
+  display: grid;
+  gap: 10px;
+
+  .TopRow {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: .5fr repeat(3, 1fr);
+  }
+
+  .BottomRow {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr) .5fr;
+  }
+}
+
+.Shape {
+  background: $shape-background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $border-radius;
+  height: 100px;
+  padding: 10px;
+  transition: background 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background: $shape-hover-background;
+  }
+}
+
+.Square {
+  width: 80px;
+  height: 80px;
+  background: #333;
+}
+
+.Circle {
+  width: 80px;
+  height: 80px;
+  background: #333;
+  border-radius: 50%;
+}
+
+.Oval {
+  width: 55%;
+  height: 80px;
+  background: #333;
+  border-radius: 50%;
+}
+
+.Rectangle {
+  width: 55%;
+  height: 80px;
+  background: #333;
+}
+
+.Trapezoid {
+  border-bottom: 50px solid #333;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	height: 0;
+	width: 55%;
+}
+
+.Rhombus {
+  width: 55%;
+  height: 80px;
+  background: #333;
+  transform: skewX(45deg) scaleY(cos(45deg));
+}

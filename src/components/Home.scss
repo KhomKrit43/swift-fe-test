@@ -1,0 +1,29 @@
+.Home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    div {
+        width: 100%;
+    }
+}
+
+.List {
+    max-width: 500px;
+}
+
+.ListItem {
+    transition: box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.ListItem:hover {
+    :where(.css-dev-only-do-not-override-d2lrxs).ant-card {
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.35);
+    }
+}
+
+.Description {
+    display: flex;
+    align-items: start;
+}

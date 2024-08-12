@@ -1,0 +1,46 @@
+
+
+.FormData {
+    border: 1px solid #555;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.FormItem {
+    // width: auto;
+    margin-bottom: 10px;
+}
+
+.DatePicker {
+    width: 100%;
+}
+
+.SelectNationality {
+    width: 50% !important;
+}
+
+.citizen-id-inputs {
+    display: flex;
+    align-items: center;
+    width: 80%;
+}
+
+.InputCitizen {
+    width: auto;
+
+    &:not(:last-child) {
+        margin-right: 8px;
+    }
+}
+
+.InputNumber {
+    width: 100%;
+}
+
+.TableData {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}

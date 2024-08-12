@@ -1,0 +1,60 @@
+{
+    "language": "Language",
+    "th": "TH",
+    "en": "EN",
+    "Move Shape": "Move Shape",
+    "Move Position": "Move Position",
+    "Menege": "Menege",
+    "FormAndTable": "Form & Table",
+    "Please input your title!": "Please input your title!",
+    "Title": {
+        "home": "Home",
+        "test": "Test"
+    },
+    "Description": {
+        "test1": "Layout & Style",
+        "test2": "Connect API"
+    },
+    "Form": {
+        "Title": "Title",
+        "Select": "Select ",
+        "Mr": "Mr.",
+        "Mrs": "Mrs.",
+        "Miss": "Miss",
+        "FirstName": "First Name",
+        "LastName": "Last Name",
+        "BirthDay": "Birth Day",
+        "Nationality": "Nationality",
+        "CitizenID": "CitizenID",
+        "Gender": "Gender",
+        "Phone": "Mobile Phone",
+        "PassportNumber": "Passport No.",
+        "ExpectedSalary": "Expected Salary",
+        "Menege": {
+            "RESET": "RESET",
+            "SUBMIT": "SUBMIT",
+            "EDIT": "EDIT",
+            "DELETE": "DELETE"
+        },
+        "MM/DD/YYYY": "MM/DD/YYYY"
+    },
+    "Gender": {
+        "Male": "Male",
+        "Female": "Female",
+        "Unsex": "Unsex"
+    },
+    "Table": {
+        "Name": "Name",
+        "Gender": "Gender",
+        "Phone": "Mobile Phone",
+        "Nationality": "Nationality",
+        "SelectAll": "Select All",
+        "Prev": "PREV",
+        "Next": "NEXT"
+    },
+    "Nationality": {
+        "TH": "Thai",
+        "FR": "France",
+        "USA": "America"
+    }
+}

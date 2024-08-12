@@ -1,0 +1,60 @@
+{
+    "language": "ภาษา",
+    "th": "ไทย",
+    "en": "อังกฤษ",
+    "Move Shape": "เลื่อนรูปแบบ",
+    "Move Position": "เปลี่ยนตำแหน่ง",
+    "Menege": "จัดการ",
+    "FormAndTable": "การจัดการหน้าฟอร์ม",
+    "Please input your title!": "กรุณากรอกคำนำหน้าของคุณ!",
+    "Title": {
+        "home": "หน้าหลัก",
+        "test": "ทดสอบ"
+    },
+    "Description": {
+        "test1": "การจัดหน้าเว็บ",
+        "test2": "การเชื่อมต่อ API"
+    },
+    "Form": {
+        "Title": "คำนำหน้า",
+        "Select": "เลือก",
+        "Mr": "นาย",
+        "Mrs": "นาง",
+        "Miss": "นางสาว",
+        "FirstName": "ชื่อจริง",
+        "LastName": "นามสกุล",
+        "BirthDay": "วันเกิด",
+        "Nationality": "สัญชาติ",
+        "CitizenID": "เลขประจำตัวประชาชน",
+        "Gender": "เพศ",
+        "Phone": "หมายเลขโทรศัพท์มือถือ",
+        "PassportNumber": "หนังสือเดินทาง",
+        "ExpectedSalary": "เงินเดือนที่คาดหวัง",
+        "Menege": {
+            "RESET": "ล้างข้อมูล",
+            "SUBMIT": "ส่งข้อมูล",
+            "EDIT": "แก้ไขข้อมูล",
+            "DELETE": "ลบข้อมูล"
+        },
+        "MM/DD/YYYY": "เดือน/วัน/ปี"
+    },
+    "Gender": {
+        "Male": "ผู้ชาย",
+        "Female": "ผู้หญิง",
+        "Unsex": "ไม่ระบุ"
+    },
+    "Table": {
+        "Name": "ชื่อ",
+        "Gender": "เพศ",
+        "Phone": "หมายเลขโทรศัพท์มือถือ",
+        "Nationality": "สัญชาติ",
+        "SelectAll": "เลือกทั้งหมด",
+        "Prev": "ก่อนหน้า",
+        "Next": "ถัดไป"
+    },
+    "Nationality": {
+        "TH": "ไทย",
+        "FR": "ฝรั่งเศส",
+        "USA": "อเมริกา"
+    }
+}
