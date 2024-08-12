@@ -8,7 +8,11 @@ import type { TableProps } from "antd";
 // eslint-disable-next-line
 import { selectPeople, addPerson, editPerson, deletePerson } from "../features/personSlice";
 import { Person } from '../types/person';
+import dayjs from 'dayjs';
+import 'dayjs/locale/th';
 import "./Test2.scss";
+
+dayjs.locale('th');
 
 const Test2 = () => {
   const { t } = useTranslation();
@@ -18,6 +22,7 @@ const Test2 = () => {
   const [mode, setMode] = useState<"add" | "edit">("add");
   const dispatch = useDispatch();
   const people: Person[] = useSelector(selectPeople);
+  const [editId, setEditId] = useState<number>(0);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement>,
@@ -62,8 +67,12 @@ const Test2 = () => {
   }
 
   const onFinish = (values: any) => {
+    const citizen = citizenValue.join("");
+
+    values.citizenId = citizen;
+
     const person: Person = {
-      id: Date.now(),
+      id: mode === "edit" ? editId : Date.now(),
       title: values.title,
       firstName: values.firstName,
       lastName: values.lastName,
@@ -76,10 +85,17 @@ const Test2 = () => {
       passportNumber: values.passportNumber,
       expectedSalary: parseInt(values.expectedSalary),
     };
-    if (mode === "edit") {
-      dispatch(editPerson(person));
-    } else {
-      dispatch(addPerson(person));
+    try {
+      console.log(mode);
+      if (mode === "edit") {
+        dispatch(editPerson(person));
+      } else {
+        dispatch(addPerson(person));
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      // setMode("add");
     }
   };
 
@@ -106,14 +122,31 @@ const Test2 = () => {
     setSelectedRowKeys([]);
   };
 
-  const changeMode = (mode: "add" | "edit", record: Person) => () => {
-    console.log(record);
+  const changeMode = (mode: "add" | "edit", record: Person) => async (): Promise<void> => {
     setMode(mode);
+    const citizenId = record.citizenId.split("");
+    const input = document.querySelectorAll(".InputCitizen") as NodeListOf<HTMLInputElement>;
+    await citizenId.forEach((value, index) => {
+      if (index === 0) {
+        input[0].value += value;
+      } else if (index > 0 && index < 5) {
+        input[1].value += value;
+      } else if (index >= 5 && index < 10) {
+        input[2].value += value;
+      } else if (index >= 10 && index < 12) {
+        input[3].value += value;
+      } else if (index >= 12) {
+        input[4].value += value;
+      }
+    });
+
+    setEditId(record.id);
+
     form.setFieldsValue({
       title: record.title,
       firstName: record.firstName,
       lastName: record.lastName,
-      birthDate: record.birthDate,
+      // birthDate: record.birthDate,
       Nationality: record.Nationality,
       citizenId: record.citizenId,
       gender: record.gender,
@@ -233,10 +266,9 @@ const Test2 = () => {
           >
             <DatePicker
               placeholder={t("Form.MM/DD/YYYY")}
-              format={{
-                format: "MM/DD/YYYY",
-              }}
+              format="MM/DD/YYYY"
               className="DatePicker"
+              value={dayjs(form.getFieldValue('birthDate'))} // Ensure correct value handling
             />
           </Form.Item>
           <Form.Item
@@ -266,7 +298,7 @@ const Test2 = () => {
                 <Input
                   key={index}
                   className="InputCitizen"
-                  disabled={getInputDisabledStatus(index)}
+                  // disabled={getInputDisabledStatus(index)}
                   style={{
                     width:
                       index === 0
@@ -327,16 +359,7 @@ const Test2 = () => {
             rules={[{ required: true }]}
             className="FormItem col-6"
           >
-            <div className="d-flex align-items-center">
-              <Space
-                style={{
-                  marginRight: '5px',
-                }}
-              >
-                -
-              </Space>
-              <Input maxLength={10} className="Inpust" />
-            </div>
+            <Input maxLength={10} className="Inpust" />
           </Form.Item>
           <Form.Item
             label={t("Form.PassportNumber")}

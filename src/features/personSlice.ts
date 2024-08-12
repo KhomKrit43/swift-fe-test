@@ -20,7 +20,11 @@ const personSlice = createSlice({
             saveToLocalStorage('people', state.people);
         },
         editPerson: (state, action: PayloadAction<Person>) => {
-            const index = state.people.findIndex(person => person.id === action.payload.id);
+            const stateArr = JSON.parse(JSON.stringify(state.people));
+            console.log("state", stateArr);
+            console.log("action", action.payload);
+            const index = stateArr.findIndex((person: any) => person.id === action.payload.id);
+            console.log(index);
             if (index !== -1) {
                 state.people[index] = action.payload;
                 saveToLocalStorage('people', state.people);
